@@ -1,10 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useState } from "react";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const router = useRouter();
   const [count, setCount] = useState(0);
 
   const addCount = () => {
@@ -42,6 +44,13 @@ export default function Home() {
         <Link className={styles.link} href={`/posts/${count}`}>
           Go to dynamic page
         </Link>
+        <Link className={styles.link} href="/posts">
+          SSG Posts
+        </Link>
+
+        <button className="button" onClick={() => router.push("/random")}>
+          Random image page
+        </button>
       </main>
 
       <footer className={styles.footer}>
