@@ -127,3 +127,14 @@
     filter: invert(1);
   }
 }
+
+.link {
+  margin: 20px 0;
+  text-decoration: underline;
+  color: #ff0000;
+  transition: color 0.2s ease-in;
+}
+
+.link:hover {
+  color: brown;
+}
