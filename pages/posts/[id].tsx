@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import styles from "../../styles/Post.module.css";
+import Button from "../../components/Button";
+import Main from "../../components/Main";
 
 const Post = () => {
   const router = useRouter();
@@ -18,12 +19,10 @@ const Post = () => {
         <meta name="description" content="Post page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.container}>
-        <p>Dynamic Post Id: {id}</p>
-        <button className="button" onClick={() => router.back()}>
-          Go back
-        </button>
-      </div>
+      <Main>
+        <p className="font-bold text-3xl mb-5">Dynamic Post Id: {id}</p>
+        <Button back={true}>Go back</Button>
+      </Main>
     </>
   );
 };

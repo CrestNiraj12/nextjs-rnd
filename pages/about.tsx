@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useRouter } from "next/router";
-import styles from "../styles/About.module.css";
+import Button from "../components/Button";
+import Main from "../components/Main";
 
 export default function About() {
-  const router = useRouter();
   return (
     <div>
       <Head>
@@ -13,15 +12,19 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>Welcome to About!</h1>
-        <div className="logo">
-          <Image src="/vercel.svg" alt="Vercel" width="300" height="300" />
+      <Main>
+        <h1 className="font-bold text-3xl">Welcome to About!</h1>
+        <div>
+          <Image
+            className="invert my-20"
+            src="/vercel.svg"
+            alt="Vercel"
+            width="300"
+            height="300"
+          />
         </div>
-        <button className="button" onClick={() => router.push("/")}>
-          Go to homepage
-        </button>
-      </main>
+        <Button back={true}>Go Home</Button>
+      </Main>
     </div>
   );
 }

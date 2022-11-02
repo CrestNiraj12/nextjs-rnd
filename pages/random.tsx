@@ -7,7 +7,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import styles from "../styles/Post.module.css";
+import Button from "../components/Button";
+import Main from "../components/Main";
 
 const RandomImage: React.FC = ({
   imageUrl,
@@ -22,9 +23,9 @@ const RandomImage: React.FC = ({
       <Head>
         <title>Random Image Page</title>
       </Head>
-      <div className={styles.container}>
-        <h2>Random Image 😊</h2>
-        <div style={{ marginBottom: 20 }}>
+      <Main>
+        <h5 className="mb-5 font-bold text-xl">Random Image 😊</h5>
+        <div className="mb-5">
           <Image
             src={url}
             alt="random image"
@@ -34,10 +35,8 @@ const RandomImage: React.FC = ({
             placeholder="blur"
           />
         </div>
-        <button className="button" onClick={() => router.back()}>
-          Go back
-        </button>
-      </div>
+        <Button back={true}>Go back</Button>
+      </Main>
     </>
   );
 };

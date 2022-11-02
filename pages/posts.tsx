@@ -5,7 +5,8 @@ import {
 } from "next";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import styles from "../styles/About.module.css";
+import Button from "../components/Button";
+import Main from "../components/Main";
 
 interface Post {
   id: number;
@@ -21,26 +22,21 @@ const Posts: React.FC = ({
       <Head>
         <title>Posts</title>
       </Head>
-      <div
-        className={styles.main}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <h2>Posts</h2>
-        <ul style={{ textAlign: "left", padding: 0 }}>
-          {posts.map((post: Post) => (
-            <p key={post.id}>
-              {post.id}. {post.title}
-            </p>
-          ))}
-        </ul>
-        <button className="button" onClick={() => router.back()}>
-          Go back
-        </button>
-      </div>
+      <Main>
+        <div className="w-[300px]">
+          <h2 className="font-bold text-3xl text-center">Posts</h2>
+          <ul className="text-left p-0 my-10">
+            {posts.map((post: Post) => (
+              <p key={post.id} className="mb-2">
+                {post.id}. {post.title}
+              </p>
+            ))}
+          </ul>
+          <div className="text-center">
+            <Button back={true}>Go back</Button>
+          </div>
+        </div>
+      </Main>
     </>
   );
 };
