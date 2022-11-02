@@ -45,7 +45,7 @@ const RandomImage: React.FC = ({
 export const getServerSideProps: GetServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  const imageUrl: string = "https://picsum.photos/300";
+  const imageUrl: string | undefined = process.env.IMAGE_URL;
 
   return {
     props: {
