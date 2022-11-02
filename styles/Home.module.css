@@ -123,10 +123,14 @@
 .link {
   margin: 20px 0;
   text-decoration: underline;
-  color: #ff0000;
+  color: #ff0000cc;
   transition: color 0.2s ease-in;
 }
 
 .link:hover {
   color: brown;
+}
+
+.counter {
+  margin-inline: 5px;
 }

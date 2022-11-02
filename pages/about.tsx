@@ -18,7 +18,7 @@ export default function About() {
         <div className="logo">
           <Image src="/vercel.svg" alt="Vercel" width="300" height="300" />
         </div>
-        <button className={styles.button} onClick={() => router.push("/")}>
+        <button className="button" onClick={() => router.push("/")}>
           Go to homepage
         </button>
       </main>
