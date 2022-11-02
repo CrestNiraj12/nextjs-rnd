@@ -14,9 +14,10 @@ export default function About() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+        <h1 className={styles.title}>Welcome to About!</h1>
+        <div className="logo">
+          <Image src="/vercel.svg" alt="Vercel" width="300" height="300" />
+        </div>
         <button className={styles.button} onClick={() => router.push("/")}>
           Go to homepage
         </button>
