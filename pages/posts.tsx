@@ -7,6 +7,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Button from "../components/Button";
 import Main from "../components/Main";
+import { VStack, Heading, Box, OrderedList, ListItem } from "@chakra-ui/react";
 
 interface Post {
   id: number;
@@ -23,19 +24,19 @@ const Posts: React.FC = ({
         <title>Posts</title>
       </Head>
       <Main>
-        <div className="w-[300px]">
-          <h2 className="font-bold text-3xl text-center">Posts</h2>
-          <ul className="text-left p-0 my-10">
+        <VStack className="w-[300px]" align="start" spacing="50px">
+          <Heading as="h2" size="xl" className="text-center w-full">
+            Posts
+          </Heading>
+          <OrderedList spacing={5}>
             {posts.map((post: Post) => (
-              <p key={post.id} className="mb-2">
-                {post.id}. {post.title}
-              </p>
+              <ListItem key={post.id}>{post.title}</ListItem>
             ))}
-          </ul>
-          <div className="text-center">
+          </OrderedList>
+          <Box className="text-center w-full">
             <Button back={true}>Go back</Button>
-          </div>
-        </div>
+          </Box>
+        </VStack>
       </Main>
     </>
   );

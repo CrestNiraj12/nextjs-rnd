@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Button from "../components/Button";
 import Main from "../components/Main";
+import { Box, Heading } from "@chakra-ui/react";
 
 export default function About() {
   return (
@@ -13,17 +14,21 @@ export default function About() {
       </Head>
 
       <Main>
-        <h1 className="font-bold text-3xl">Welcome to About!</h1>
-        <div>
+        <Heading as="h1" size="lg">
+          Welcome to About!
+        </Heading>
+        <Box>
           <Image
             className="dark:invert my-20"
             src="/vercel.svg"
             alt="Vercel"
-            width="300"
-            height="300"
+            width="150"
+            height="150"
           />
-        </div>
-        <Button back={true}>Go Home</Button>
+        </Box>
+        <Button link="/" className="w-[17%]">
+          Go Home
+        </Button>
       </Main>
     </div>
   );

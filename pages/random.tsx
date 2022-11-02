@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Button from "../components/Button";
 import Main from "../components/Main";
+import { Heading, Box } from "@chakra-ui/react";
 
 const RandomImage: React.FC = ({
   imageUrl,
@@ -24,8 +25,10 @@ const RandomImage: React.FC = ({
         <title>Random Image Page</title>
       </Head>
       <Main>
-        <h5 className="mb-5 font-bold text-xl">Random Image 😊</h5>
-        <div className="mb-5">
+        <Heading as="h5" size="lg" className="mb-5">
+          Random Image 😊
+        </Heading>
+        <Box className="mb-5">
           <Image
             src={url}
             alt="random image"
@@ -34,7 +37,7 @@ const RandomImage: React.FC = ({
             blurDataURL={url}
             placeholder="blur"
           />
-        </div>
+        </Box>
         <Button back={true}>Go back</Button>
       </Main>
     </>
