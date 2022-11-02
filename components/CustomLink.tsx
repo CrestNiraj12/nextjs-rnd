@@ -8,7 +8,12 @@ type Props = {
 
 const CustomLink: React.FC<Props> = ({ href, children, className }) => {
   return (
-    <Link className={`underline text-red-500 ${className}`} href={href}>
+    <Link
+      className={`underline dark:text-red-500 text-red-600 ${
+        className ? className : ""
+      }`}
+      href={href}
+    >
       {children}
     </Link>
   );

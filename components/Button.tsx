@@ -16,7 +16,9 @@ const Button: React.FC<Props> = ({
   const router = useRouter();
   return (
     <button
-      className={`bg-red-700 py-2 px-5 border-0 rounded hover:bg-red-500 transition ease-in ${className}`}
+      className={`bg-red-700 text-white py-2 px-5 border-0 rounded hover:bg-red-600 dark:hover:bg-red-500 transition ease-in ${
+        className ? className : ""
+      }`}
       onClick={() => (back ? router.back() : router.push(link!))}
     >
       {children}

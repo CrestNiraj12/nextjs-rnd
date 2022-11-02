@@ -16,7 +16,7 @@ export default function About() {
         <h1 className="font-bold text-3xl">Welcome to About!</h1>
         <div>
           <Image
-            className="invert my-20"
+            className="dark:invert my-20"
             src="/vercel.svg"
             alt="Vercel"
             width="300"

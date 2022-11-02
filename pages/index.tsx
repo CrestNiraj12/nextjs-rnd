@@ -39,7 +39,7 @@ export default function Home() {
           </CustomLink>
           <CustomLink href="/posts">SSG Posts</CustomLink>
         </div>
-        <div className="flex flex-col justify-center items-center my-10 border-2 rounded p-5 border-dashed border-spacing-2">
+        <div className="flex flex-col justify-center items-center my-10 border-2 border-gray-400 dark:border-gray-200 rounded p-5 border-dashed border-spacing-2">
           <div className="flex mb-3 items-center">
             <CounterButton onClick={subCount}>-</CounterButton>
             <span className="mx-3">
@@ -62,7 +62,7 @@ export default function Home() {
           Powered by{" "}
           <span>
             <Image
-              className="h-[1em] invert inline"
+              className="h-[1em] dark:invert inline"
               src="/vercel.svg"
               alt="Vercel Logo"
               width={72}
@@ -88,7 +88,9 @@ const CounterButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`inline-block border-2 px-2 pb-[2px] border-blue-600 text-blue-300 transition-colors duration-300 ease-out hover:bg-blue-600 hover:text-white rounded ${className}`}
+      className={`inline-block border-2 px-2 pb-[2px] border-blue-600 text-blue-600 dark:text-blue-300 transition-colors duration-300 ease-out hover:bg-blue-600 hover:text-white rounded ${
+        className ? className : ""
+      }`}
       onClick={onClick}
     >
       {children}
