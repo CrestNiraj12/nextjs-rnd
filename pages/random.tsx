@@ -17,7 +17,7 @@ const RandomImage: React.FC = ({
   const router = useRouter();
   const [url, setUrl] = useState(imageUrl);
 
-  useEffect(() => setUrl(`${imageUrl}/?dummy=${Math.random()}`), []);
+  useEffect(() => setUrl(`${imageUrl}/?dummy=${Math.random()}`), [imageUrl]);
 
   return (
     <>

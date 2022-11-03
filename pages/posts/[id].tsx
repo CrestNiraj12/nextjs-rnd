@@ -9,10 +9,6 @@ const Post = () => {
   const router = useRouter();
   const { id } = router.query;
 
-  useEffect(() => {
-    console.log(id);
-  }, []);
-
   return (
     <>
       <Head>
